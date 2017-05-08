@@ -1,0 +1,19 @@
+{
+  "name": "immerse",
+  "version": "1.0.0",
+  "description": "Immerse Demo Gulp Project for AEM",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rogerblanton/immerse.git"
+  },
+  "author": "Roger Blanton",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rogerblanton/immerse/issues"
+  },
+  "homepage": "https://github.com/rogerblanton/immerse#readme"
+}

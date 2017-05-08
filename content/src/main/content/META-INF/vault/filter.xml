@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspaceFilter version="1.0">
+    <filter root="/apps/immerse-project"/>
+
+
+
+    <filter root="/etc/clientlibs/immerse-project"/>
+
+
+    <filter root="/etc/designs/immerse-project">
+        <include pattern="/etc/designs/immerse-project/jcr:content"/>
+
+        <include pattern="/etc/designs/immerse-project/jcr:content/clientlibs"/>
+        <include pattern="/etc/designs/immerse-project/jcr:content/clientlibs/.*"/>
+
+    </filter>
+
+</workspaceFilter>
