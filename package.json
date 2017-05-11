@@ -15,5 +15,10 @@
   "bugs": {
     "url": "https://github.com/rogerblanton/immerse/issues"
   },
-  "homepage": "https://github.com/rogerblanton/immerse#readme"
+  "homepage": "https://github.com/rogerblanton/immerse#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-less": "^3.3.0",
+    "path": "^0.12.7"
+  }
 }

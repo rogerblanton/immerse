@@ -2,10 +2,10 @@
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
     jcr:description="Content Page Template for Immerse Conference"
     jcr:primaryType="cq:Template"
-    jcr:title="Immerse Content Page Template"
+    jcr:title="Immerse Language Page Template"
     allowedPaths="[/content/immerse(/.*)?]"
     ranking="{Long}100">
     <jcr:content
         jcr:primaryType="cq:PageContent"
-        sling:resourceType="immerse-project/components/page/content-page"/>
+        sling:resourceType="immerse-project/components/page/language-template"/>
 </jcr:root>
