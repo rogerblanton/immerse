@@ -3,7 +3,7 @@
     jcr:description="Content Page Template for Immerse Conference"
     jcr:primaryType="cq:Template"
     jcr:title="Immerse Project Page Template"
-    allowedPaths="[/content(/.*)?]"
+    allowedPaths="[/content]"
     ranking="{Long}100">
     <jcr:content
         jcr:primaryType="cq:PageContent"
