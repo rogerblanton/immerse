@@ -1,42 +1,30 @@
-<head data-sly-use.head="/apps/immerse-project/components/page/base/head.js" data-sly-use.clientlib="${'granite/sightly/templates/clientlib.html'}"
-data-sly-use.wcmInit="/libs/wcm/foundation/components/page/initwcm.js">
+<head data-sly-use.head="head.js"
+      data-sly-use.clientLib="/libs/granite/sightly/templates/clientlib.html"
+      data-sly-use.dhlm="${'/apps/acs-commons/sightly/templates/dhlm.html'}"
+      data-sly-use.headlibRenderer="headlibs.html"
+      data-sly-use.wcmInit="/libs/wcm/foundation/components/page/initwcm.js">
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-    <meta name="keywords" content="${head.keywords}">
-    <meta name="description" content="${head.description}">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
 
-	<!--/* WCM initialization code start */-->
-    <meta data-sly-test="${!wcmmode.disabled && wcmInit.isTouchAuthoring}" data-sly-call="${clientLib.all @ categories='cq.authoring.page'}" data-sly-unwrap></meta>
-    <meta data-sly-test="${!wcmmode.disabled && !wcmInit.isTouchAuthoring}" data-sly-call="${clientLib.all @ categories='cq.wcm.edit'}" data-sly-unwrap></meta>
+    <meta data-sly-test.keywords="${head.keywords}" name="keywords" content="${keywords}"/>
+    <meta data-sly-test.description="${head.description}" name="description" content="${description}"/>
 
-    <script data-sly-test="${!wcmmode.disabled && !wcmInit.isTouchAuthoring}" type="text/javascript">
-        (function() {
+    <sly data-sly-include="author.html" />
+    <sly data-sly-include="/libs/cq/cloudserviceconfigs/components/servicelibs/servicelibs.jsp" />
+    <sly data-sly-include="customheaderlibs.html" />
 
-            var cfg = ${wcmInit.undoConfig @ context='unsafe'};
-            cfg.pagePath = "${currentPage.path @ context='uri'}";
-
-            if (CQClientLibraryManager.channelCB() != "touch") {
-                cfg.enabled = ${wcmmode.edit @ context="scriptString"};
-                CQ.undo.UndoManager.initialize(cfg);
-                CQ.Ext.onReady(function() {
-                    CQ.undo.UndoManager.detectCachedPage((new Date()).getTime());
-                });
-            }
-        })();
-
-        CQ.WCM.launchSidekick("${currentPage.path @ context='uri'}", {
-            propsDialog: "${wcmInit.dialogPath @ context='uri'}",
-            locked: ${currentPage.locked @ context="scriptString"}
-        });
-    </script>
-    <!--/* WCM initialization code end */-->
-
-    <link rel="icon" type="image/vnd.microsoft.icon" href="${head.faviconPath}">
-    <link rel="shortcut icon" type="image/vnd.microsoft.icon" href="${head.faviconPath}">
+    <sly data-sly-test.faviconpath="${head.faviconPath}">
+        <link rel="icon" type="image/vnd.microsoft.icon" href="${faviconpath}">
+        <link rel="shortcut icon" type="image/vnd.microsoft.icon" href="${faviconpath}">
+    </sly>
 
     <title>${head.title}</title>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <style data-sly-call="${dhlm.head @ mode='all'}" data-sly-unwrap></style>
 
 </head>
+
+

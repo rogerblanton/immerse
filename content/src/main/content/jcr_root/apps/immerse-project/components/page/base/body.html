@@ -7,5 +7,5 @@
 		<sly data-sly-resource="${'backToTop' @ resourceType='/apps/immerse-project/components/content/back-to-top', wcmmode='disabled'}"></sly>
 	</div>
 	<div data-sly-resource="${'cloudservices' @ resourceType='cq/cloudserviceconfigs/components/servicecomponents'}" data-sly-unwrap></div>
-	<meta data-sly-use.clientlib="${'granite/sightly/templates/clientlib.html'}" data-sly-call="${clientlib.js @ categories='immerse-project.all'}" data-sly-unwrap></meta>
+	<section data-sly-use.dhlm="${'/apps/acs-commons/sightly/templates/dhlm.html'}" data-sly-call="${dhlm.body @ mode='js'}" data-sly-unwrap></section>
 </body>
