@@ -46,7 +46,8 @@
         <h1><%= StringEscapeUtils.escapeHtml4(title) %></h1>
 
         <%-- Include ClientLibs Manager Component --%>
-        <cq:include path="<%= DesignHtmlLibraryManager.RESOURCE_NAME %>"  resourceType="immerse-project/components/utilities/designer/clientlibsmanager"/>
+        <cq:include path="<%= DesignHtmlLibraryManager.RESOURCE_NAME %>"  resourceType="acs-commons/components/utilities/designer/clientlibsmanager"/>
+        <cq:include path="stylesheetCustomizer"  resourceType="immerse-project/components/utilities/designer/stylesheetcustomizer"/>
 
     </body>
 </html>

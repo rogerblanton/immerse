@@ -16,3 +16,5 @@ Thumbs.db
 node_modules/
 
 .project
+
+content/src/main/content/jcr_root/libs/
