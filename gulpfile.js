@@ -63,7 +63,7 @@
         livereload.listen();
 
         //watch CSS files for changes and trigger the CURL to local AEM
-        gulp.watch(['**/*.css', '**/*.txt', '**/*.html', '**/*.js'], function (event) {
+        gulp.watch(['**/*.css', '**/*.txt', '**/*.html', '**/*.js', '!gulpfile.js'], function (event) {
 
             var path = event.path,
                 fileNameRegEx = /([^\/]+)$/g,
@@ -76,8 +76,13 @@
             fileName = fileNameRegEx.exec(path);
             fileToDeployDestination = fileToDeployDestination.split(fileName)[0];
 
-            // call the deploy task
-            gulp.start('deploy');
+            // if the file is a JS file, lint it before we deploy it
+            if (path.endsWith(".js")) {
+                gulp.start(["scripts", 'deploy']);
+            } else {
+                // call the deploy task
+                gulp.start('deploy');
+            }
 
         });
 
@@ -86,7 +91,9 @@
         gulp.watch('**/*.less', ['less']);
     });
 
-    gulp.task('dev', ['watch']);
+    gulp.task('dev', ['watch'], function() {
+        util.log("dev task executed");
+    });
 
 }());
 
