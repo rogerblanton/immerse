@@ -1,0 +1,12 @@
+<body>
+	<div data-sly-resource="${'clientcontext' @ resourceType='cq/personalization/components/clientcontext_optimized'}" data-sly-unwrap></div>
+	<sly data-sly-include="header.html"></sly>
+	<div class="container">
+		<sly data-sly-include="content.html"></sly>
+	</div>
+
+	<sly data-sly-include="footer.html"></sly>
+	<!--<sly data-sly-resource="${'backToTop' @ resourceType='/apps/immerse-project/components/content/back-to-top', wcmmode='disabled'}"></sly>-->
+	<div data-sly-resource="${'cloudservices' @ resourceType='cq/cloudserviceconfigs/components/servicecomponents'}" data-sly-unwrap></div>
+	<section data-sly-use.dhlm="${'/apps/acs-commons/sightly/templates/dhlm.html'}" data-sly-call="${dhlm.body @ mode='js'}" data-sly-unwrap></section>
+</body>

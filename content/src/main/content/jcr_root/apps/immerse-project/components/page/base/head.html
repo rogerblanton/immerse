@@ -1,0 +1,30 @@
+<head data-sly-use.head="head.js"
+      data-sly-use.clientLib="/libs/granite/sightly/templates/clientlib.html"
+      data-sly-use.dhlm="${'/apps/acs-commons/sightly/templates/dhlm.html'}"
+      data-sly-use.headlibRenderer="headlibs.html"
+      data-sly-use.wcmInit="/libs/wcm/foundation/components/page/initwcm.js">
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+
+    <meta data-sly-test.keywords="${head.keywords}" name="keywords" content="${keywords}"/>
+    <meta data-sly-test.description="${head.description}" name="description" content="${description}"/>
+
+    <sly data-sly-include="author.html" />
+    <sly data-sly-include="/libs/cq/cloudserviceconfigs/components/servicelibs/servicelibs.jsp" />
+    <sly data-sly-include="customheaderlibs.html" />
+
+    <sly data-sly-test.faviconpath="${head.faviconPath}">
+        <link rel="icon" type="image/vnd.microsoft.icon" href="${faviconpath}">
+        <link rel="shortcut icon" type="image/vnd.microsoft.icon" href="${faviconpath}">
+    </sly>
+
+    <title>${head.title}</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <style data-sly-call="${dhlm.head @ mode='all'}" data-sly-unwrap></style>
+
+</head>
+
+

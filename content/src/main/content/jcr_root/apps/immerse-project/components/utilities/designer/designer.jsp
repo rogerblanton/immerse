@@ -38,7 +38,7 @@
         <title>CQ5 Design | <%= StringEscapeUtils.escapeHtml4(title) %></title>
         <meta http-equiv="Content-Type" content="text/html; utf-8" />
 
-        <cq:includeClientLib categories="cq.wcm.edit,acs-commons.utilities.clientlibsmanager"/>
+        <cq:includeClientLib categories="cq.wcm.edit,acs-commons.utilities.clientlibsmanager,immerse-project.dependencies.bootstrap"/>
         <script src="/libs/cq/ui/resources/cq-ui.js" type="text/javascript"></script>
     </head>
 
@@ -46,7 +46,7 @@
         <h1><%= StringEscapeUtils.escapeHtml4(title) %></h1>
 
         <%-- Include ClientLibs Manager Component --%>
-        <cq:include path="<%= DesignHtmlLibraryManager.RESOURCE_NAME %>"  resourceType="acs-commons/components/utilities/designer/clientlibsmanager"/>
+        <cq:include path="<%= DesignHtmlLibraryManager.RESOURCE_NAME %>"  resourceType="immerse-project/components/utilities/designer/clientlibsmanager"/>
 
     </body>
 </html>

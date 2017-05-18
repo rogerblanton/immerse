@@ -12,3 +12,7 @@ Thumbs.db
 
 *.iml
 .idea/
+
+node_modules/
+
+.project
