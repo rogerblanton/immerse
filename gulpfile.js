@@ -2,16 +2,17 @@
 
     "use strict";
 
-    var gulp = require('gulp');
-    var plumber = require('gulp-plumber');
-    var less = require('gulp-less');
-    var path = require('path');
-    var livereload = require('gulp-livereload');
-    var exec = require('gulp-exec');
-    var autoprefixer = require('gulp-autoprefixer');
-    var notify = require('gulp-notify');
-    var gutil = require('gulp-util');
-    var fs = require('fs');
+    const gulp = require('gulp');
+    const plumber = require('gulp-plumber');
+    const less = require('gulp-less');
+    const path = require('path');
+    const livereload = require('gulp-livereload');
+    const exec = require('gulp-exec');
+    const autoprefixer = require('gulp-autoprefixer');
+    const notify = require('gulp-notify');
+    const gutil = require('gulp-util');
+    const fs = require('fs');
+    const jshint = require('gulp-jshint');
 
     var props = JSON.parse(fs.readFileSync('./package.json'));
     var fileName, fileToDeploy, fileToDeployDestination;
@@ -31,6 +32,14 @@
                 cascade: false
             }))
             .pipe(gulp.dest('content/'));
+    });
+
+    //
+    gulp.task('scripts', function () {
+        return gulp.src(['content/**/*.js', '!content/target/**/*.js', '!content/**/vendor/**/*.js'])
+            .pipe(plumber())
+            .pipe(jshint())
+            .pipe(jshint.reporter('default'));
     });
 
     //Curl front end files to AEM
@@ -77,7 +86,7 @@
         gulp.watch('**/*.less', ['less']);
     });
 
-    gulp.task('dev', ['less','watch']);
+    gulp.task('dev', ['watch']);
 
 }());
 

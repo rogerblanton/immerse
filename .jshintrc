@@ -1,0 +1,6 @@
+{
+  "globals": {
+    "granite": true,
+    "use": true
+  }
+}
