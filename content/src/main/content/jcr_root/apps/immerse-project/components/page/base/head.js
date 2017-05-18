@@ -56,6 +56,7 @@ use(["/libs/wcm/foundation/components/utils/ResourceUtils.js"], function (Resour
         faviconPath: faviconPathPromise,
         designPath: designPathPromise,
         pagePath: pagePathPromise,
-        title: titlePromise
+        title: titlePromise,
+        customStylesheet: global.designer.getDesignPath(global.currentPage)
     };
 });

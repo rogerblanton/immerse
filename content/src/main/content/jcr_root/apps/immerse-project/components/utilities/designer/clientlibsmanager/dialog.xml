@@ -8,66 +8,18 @@
         jcr:primaryType="cq:Widget"
         xtype="tabpanel">
         <items jcr:primaryType="cq:WidgetCollection">
-            <tab1
+            <general
                 jcr:primaryType="cq:Panel"
-                title="ClientLibs">
+                title="General Variables">
                 <items jcr:primaryType="cq:WidgetCollection">
-                    <head-libs
+                    <navbarColor
                         jcr:primaryType="cq:Widget"
-                        collapsed="{Boolean}false"
-                        collapsible="{Boolean}false"
-                        title="Head ClientLibs"
-                        xtype="dialogfieldset">
-                        <items jcr:primaryType="cq:WidgetCollection">
-                            <css
-                                jcr:primaryType="cq:Widget"
-                                fieldDescription="Click the '+' to add a new CSS ClientLib"
-                                fieldLabel="CSS"
-                                name="./head/css"
-                                xtype="multifield">
-                                <fieldConfig
-                                    jcr:primaryType="cq:Widget"
-                                    options="/apps/acs-commons/components/utilities/designer/clientlibsmanager/options.css.json"
-                                    type="select"
-                                    xtype="selection"/>
-                            </css>
-                            <js
-                                jcr:primaryType="cq:Widget"
-                                fieldDescription="Click the '+' to add a new JavaScript ClientLib"
-                                fieldLabel="JavaScript"
-                                name="./head/js"
-                                xtype="multifield">
-                                <fieldConfig
-                                    jcr:primaryType="cq:Widget"
-                                    options="/apps/acs-commons/components/utilities/designer/clientlibsmanager/options.js.json"
-                                    type="select"
-                                    xtype="selection"/>
-                            </js>
-                        </items>
-                    </head-libs>
-                    <body-libs
-                        jcr:primaryType="cq:Widget"
-                        collapsed="{Boolean}false"
-                        collapsible="{Boolean}false"
-                        title="Body ClientLibs"
-                        xtype="dialogfieldset">
-                        <items jcr:primaryType="cq:WidgetCollection">
-                            <js
-                                jcr:primaryType="cq:Widget"
-                                fieldDescription="Click the '+' to add a new JavaScript ClientLib"
-                                fieldLabel="JavaScript"
-                                name="./body/js"
-                                xtype="multifield">
-                                <fieldConfig
-                                    jcr:primaryType="cq:Widget"
-                                    options="/apps/acs-commons/components/utilities/designer/clientlibsmanager/options.js.json"
-                                    type="select"
-                                    xtype="selection"/>
-                            </js>
-                        </items>
-                    </body-libs>
+                        fieldDescription="Default is #f8f8f8"
+                        fieldLabel="Navbar Color"
+                        name="./navbarColor"
+                        xtype="textfield"/>
                 </items>
-            </tab1>
+            </general>
         </items>
     </items>
 </jcr:root>
