@@ -1,1 +1,1 @@
-less/headline.less
+less/headline.css

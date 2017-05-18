@@ -49,10 +49,11 @@
         livereload.listen();
 
         //watch CSS files for changes and trigger the CURL to local AEM
-        gulp.watch('**/*.css', function (event) {
-            var path = event.path;
-            var fileNameRegEx = /([^\/]+)$/g;
-            var pathRegex = /([\w]*content)/;
+        gulp.watch(['**/*.css', '**/*.txt', '**/*.html', '**/*.js'], function (event) {
+
+            var path = event.path,
+                fileNameRegEx = /([^\/]+)$/g,
+                pathRegex = /([\w]*content)/;
 
             //define our paths for curl
             fileToDeploy = pathRegex.exec(path);
@@ -66,6 +67,8 @@
 
         });
 
+        // watch less files and compile them when they are changed, this will trigger a change on the CSS file and
+        // thus trigger the deploy task as well.
         gulp.watch('**/*.less', ['less']);
     });
 
