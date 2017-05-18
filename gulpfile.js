@@ -10,7 +10,7 @@
     const exec = require('gulp-exec');
     const autoprefixer = require('gulp-autoprefixer');
     const notify = require('gulp-notify');
-    const gutil = require('gulp-util');
+    const util = require('gulp-util');
     const fs = require('fs');
     const jshint = require('gulp-jshint');
     const sourcemaps = require('gulp-sourcemaps');
@@ -19,7 +19,7 @@
     var fileName, fileToDeploy, fileToDeployDestination;
 
     var beepError = function (err) {
-        gutil.beep();
+        util.beep();
         console.log(err);
     };
 
