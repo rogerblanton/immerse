@@ -8,26 +8,32 @@
     var path = require('path');
     var livereload = require('gulp-livereload');
     var exec = require('gulp-exec');
+    var autoprefixer = require('gulp-autoprefixer');
     var notify = require('gulp-notify');
     var gutil = require('gulp-util');
     var fs = require('fs');
-    var props = JSON.parse(fs.readFileSync('./package.json'));
-    var fileName;
-    var fileToDeploy;
-    var fileToDeployDestination;
 
-    gulp.task('less', function () {
-        return gulp.src(['content/**/*.less', '!content/target/**/*.less', '!content/**/vendor/**/*.less'])
-            .pipe(plumber())
-            .pipe(less())
-            .pipe(gulp.dest('content/'));
-    });
+    var props = JSON.parse(fs.readFileSync('./package.json'));
+    var fileName, fileToDeploy, fileToDeployDestination;
 
     var beepError = function (err) {
         gutil.beep();
         console.log(err);
     };
 
+    // compile less to css
+    gulp.task('less', function () {
+        return gulp.src(['content/**/*.less', '!content/target/**/*.less', '!content/**/vendor/**/*.less'])
+            .pipe(plumber())
+            .pipe(less())
+            .pipe(autoprefixer({
+                browsers: ['last 2 versions'],
+                cascade: false
+            }))
+            .pipe(gulp.dest('content/'));
+    });
+
+    //Curl front end files to AEM
     gulp.task('deploy', function () {
         return gulp.src('')
             .pipe(plumber({
@@ -41,7 +47,6 @@
                 icon: path.join(__dirname, "gulp/gulp-icon.png")
             }))
             .pipe(livereload());
-
     });
 
     gulp.task('watch', function () {
