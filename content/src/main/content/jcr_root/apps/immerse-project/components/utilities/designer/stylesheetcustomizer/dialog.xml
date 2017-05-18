@@ -18,6 +18,12 @@
                         fieldLabel="Navbar Color"
                         name="./navbarColor"
                         xtype="textfield"/>
+                    <navbarLinkColor
+                            jcr:primaryType="cq:Widget"
+                            fieldDescription="Default is #777"
+                            fieldLabel="Navbar Link Color"
+                            name="./navbarLinkColor"
+                            xtype="textfield"/>
                     <jumbotronBackgroundColor
                             jcr:primaryType="cq:Widget"
                             fieldDescription="Default is #eee"

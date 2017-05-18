@@ -1,0 +1,1 @@
+{"version":3,"sources":["headline.css"],"names":[],"mappings":"AAAA;EACE,kBAAkB;EAClB,gBAAgB;EAChB,8BAA8B;CAC/B","file":"headline.css","sourcesContent":[".page-header {\n  padding-bottom: 9;\n  margin: 40 0 20;\n  border-bottom: 1px solid #ccc;\n}\n"]}

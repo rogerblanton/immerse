@@ -19,6 +19,10 @@
                 <td>${properties.navbarColor}</td>
             </tr>
             <tr>
+                <td>navbarLinkColor</td>
+                <td>${properties.navbarLinkColor}</td>
+            </tr>
+            <tr>
                 <td>jumbotronBackgroundColor</td>
                 <td>${properties.jumbotronBackgroundColor}</td>
             </tr>
